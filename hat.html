@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck Hat</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+    
+    <script>
+        
+        var value = 0;
+        const queryString = window.location.search; //current parameters
+
+        const urlParams = new URLSearchParams(queryString);
+
+        console.log(urlParams.get('color'));
+        console.log(urlParams.get('size'));
+        function numChange(num) {
+            value += num;
+            //all available options
+            if (value <= 0) { //min -1
+                value = 5;
+            } else if (value >= 6) { //max -1
+                value = 1;
+            }
+            document.getElementById("next").href = "torso.html"+ (window.location.search) + "&hat=" + value;
+            console.log(document.getElementById("next").href)
+        }
+    </script>
+</head>
+<body>
+    <div id="rubberDuckContainer">
+        <div id="base">
+    </div>
+    <div class="interface">
+        <button onclick="numChange(-1)">Previous color</button>
+        <button onclick="numChange(1)">Next color</button>
+    </div>
+    <a id="next" href="color.html">next page</a>
+</body>
+</html>

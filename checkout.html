@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <div id="rubberDuckContainer">
+        <img src="rubberduckbase.png" id="base">
+    </div>
+
+    <p id = "color">You ordered number </p>
+    <p id = "size">You ordered number </p>
+    <p id = "hat">You ordered number </p>
+    <p id = "torso">You ordered number </p>
+    <p id = "jewelry">You ordered number </p>
+    <p id = "expression">You ordered number </p>
+
+
+
+    <!--THE SCRIPT MUST BE AT THE BOTTOM SO IT CAN READ THE VARIABLES BEFORE DISPLAYING THE INFO-->
+    <script>
+        const queryString = window.location.search; //current parameters
+
+        const urlParams = new URLSearchParams(queryString);
+        var color= (urlParams.get('color'));
+        var size= (urlParams.get('size'));
+        var hat= (urlParams.get('hat'));
+        var torso= (urlParams.get('torso'));
+        var jewelry= (urlParams.get('jewelry'));
+        var expression= (urlParams.get('expression'));
+
+        console.log(color, size, hat, torso, jewelry, expression)
+
+        document.getElementById('color').innerHTML += color;
+        document.getElementById('size').innerHTML += size;
+        document.getElementById('hat').innerHTML += hat;
+        document.getElementById('torso').innerHTML += torso;
+        document.getElementById('jewelry').innerHTML += jewelry;
+        document.getElementById('expression').innerHTML += expression;
+        
+    </script>
+</body>
+</html>

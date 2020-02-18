@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck Color</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+   
+    <script>
+        var value = 0;
+
+        function numChange(num) {
+            value += num;
+            //all available options
+            if (value <= 0) { //min -1
+                value = 5;
+            } else if (value >= 6) { //max -1
+                value = 1;
+            }
+
+            document.getElementById("next").href = "size.html"+ "?color=" + value; 
+            document.getElementById("base").innerHTML = "<img src='base" + value + ".png'>";
+            
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="rubberDuckContainer">
+        <div id="base">
+
+    </div>
+    <div class="interface">
+        <button onclick="numChange(-1)">Previous color</button>
+
+        <button onclick="numChange(1)">Next color</button>
+    </div>
+    <a id = "next" href="size.html">next page</a>
+</body>
+
+</html>

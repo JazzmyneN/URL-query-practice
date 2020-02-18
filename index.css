@@ -1,0 +1,16 @@
+#base {
+    position: absolute;
+    z-index: 0;
+}
+#hat {
+  
+    z-index: 1;
+}
+.rubberDuckContainer {
+    position: relative;
+}
+button {
+    margin-top: 50%;
+}
+
+        
